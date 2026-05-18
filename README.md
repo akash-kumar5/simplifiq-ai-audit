@@ -193,6 +193,37 @@ GOOGLE_CREDENTIALS=
 - Expected Business Impact
 
 ---
+# Screenshots
+
+## Frontend Interface
+
+![Frontend UI](assets/ui.png)
+
+---
+
+## Email Delivery
+
+![Email Delivery](assets/email.png)
+
+---
+
+## Generated PDF Report
+
+![PDF Report](assets/report.png)
+
+---
+
+## Google Sheets Lead Logging
+
+![Google Sheets](assets/sheet.png)
+
+---
+
+## Google Drive Report Archiving
+
+![Google Drive](assets/drive.png)
+
+---
 
 # Future Improvements
 
