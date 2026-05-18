@@ -98,7 +98,6 @@ server/
 git clone <your_repo_url>
 cd <repo_name>
 ```
-
 ---
 
 # Frontend Setup
