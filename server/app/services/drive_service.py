@@ -1,13 +1,17 @@
 from googleapiclient.discovery import build
-
 from googleapiclient.http import MediaFileUpload
-
 from oauth2client.service_account import ServiceAccountCredentials
-
+import os
+import json
 scope = ["https://www.googleapis.com/auth/drive"]
 
-credentials = ServiceAccountCredentials.from_json_keyfile_name(
-    "credentials.json", scope
+credentials_dict = json.loads(
+    os.getenv("GOOGLE_CREDENTIALS")
+)
+
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(
+    credentials_dict,
+    scope
 )
 
 service = build("drive", "v3", credentials=credentials)

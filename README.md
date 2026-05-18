@@ -73,8 +73,7 @@ server/
 │
 ├── app/
 │   ├── routes/
-│   ├── services/
-│   └── models/
+│   └── services/
 │
 ├── templates/
 ├── reports/
@@ -202,25 +201,6 @@ The generated report includes:
 
 ---
 
-# Screenshots
-
-## Frontend UI
-
-(Add screenshot here)
-
-## Generated PDF Report
-
-(Add screenshot here)
-
-## Email Delivery
-
-(Add screenshot here)
-
-## Google Sheets Logging
-
-(Add screenshot here)
-
----
 
 # Future Improvements
 
