@@ -1,13 +1,11 @@
 # AI Business Audit Automation System
 
 An AI-powered lead intake and business audit automation platform built using FastAPI, Next.js, OpenAI, Google Sheets API, and Resend.
-
 This system automates the complete workflow from lead submission to personalized AI-generated business audit delivery.
 
 ---
 
 # Features
-
 * Modern Next.js frontend
 * FastAPI backend architecture
 * Website scraping and company enrichment
@@ -76,7 +74,6 @@ server/
 ├── app/
 │   ├── routes/
 │   ├── services/
-│   ├── utils/
 │   └── models/
 │
 ├── templates/
