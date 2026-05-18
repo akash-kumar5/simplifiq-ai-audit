@@ -5,6 +5,8 @@ from app.services.scraper import scrape_company_website
 from app.services.ai_service import generate_ai_insights
 from app.services.email_service import send_email
 from app.services.sheets_service import log_lead
+from app.services.drive_service import upload_pdf
+
 router = APIRouter()
 
 
@@ -26,29 +28,26 @@ async def submit_lead(data: LeadData):
         company=data.company,
         industry=data.industry,
         challenge=data.challenge,
-        scraped_content=website_data.get("content", "")
+        scraped_content=website_data.get("content", ""),
     )
-    
-    pdf_path = generate_pdf(
-    company=data.company,
-    insights=ai_insights
-)
+
+    pdf_path = generate_pdf(company=data.company, insights=ai_insights)
+
+    upload_pdf(pdf_path, f"{data.company}_audit_report.pdf")
     email_response = send_email(
-        to_email=data.email,
-        company=data.company,
-        pdf_path=pdf_path
+        to_email=data.email, company=data.company, pdf_path=pdf_path
     )
-    
+
     log_lead(data, "Completed")
-    
+
     return {
         "success": True,
         "message": "Lead processed successfully",
         "pdf_path": pdf_path,
         "ai_insights": ai_insights,
-        "email_response": email_response
+        "email_response": email_response,
     }
-    
+
 
 #     {
 #   "name": "Akash",
