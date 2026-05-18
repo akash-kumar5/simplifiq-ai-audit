@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-dotenv
+requests
+beautifulsoup4
+openai
+jinja2
+xhtml2pdf
+resend
+gspread
+oauth2client
+markdown
+python-multipart
