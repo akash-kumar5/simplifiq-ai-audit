@@ -1,20 +1,24 @@
-# AI Business Audit Automation System
+# AI Business Audit Automation Platform
 
-An AI-powered lead intake and business audit automation platform built using FastAPI, Next.js, OpenAI, Google Sheets API, and Resend.
-This system automates the complete workflow from lead submission to personalized AI-generated business audit delivery.
+An end-to-end AI-powered business audit automation system built using FastAPI, Next.js, OpenAI, Google Sheets API, Google Drive API, and Resend.
+
+The platform automates the complete lead-to-report workflow by collecting prospect information, enriching company data through website scraping, generating AI-driven business insights, creating personalized PDF audit reports, delivering reports via email, and logging leads into Google Sheets.
 
 ---
 
 # Features
-* Modern Next.js frontend
-* FastAPI backend architecture
-* Website scraping and company enrichment
-* AI-generated business insights using LLMs
-* Personalized PDF audit generation
-* Automated email delivery with PDF attachment
-* Google Sheets lead logging (mini CRM workflow)
-* Responsive and clean UI
-* Automated end-to-end workflow
+
+- AI-powered business audit generation
+- Modern Next.js frontend
+- FastAPI backend architecture
+- Company website scraping and enrichment
+- Personalized AI-generated business insights
+- Dynamic PDF report generation
+- Automated email delivery with PDF attachment
+- Google Sheets lead logging
+- Google Drive PDF archiving
+- Responsive and clean user interface
+- End-to-end automated workflow
 
 ---
 
@@ -29,11 +33,13 @@ Company Website Scraping
         ↓
 AI Insight Generation
         ↓
-PDF Audit Report Creation
+PDF Report Generation
         ↓
-Automated Email Delivery
+Email Delivery
         ↓
-Google Sheets Lead Logging
+Google Sheets Logging
+        ↓
+Google Drive Archiving
 ```
 
 ---
@@ -42,21 +48,22 @@ Google Sheets Lead Logging
 
 ## Frontend
 
-* Next.js
-* TypeScript
-* Tailwind CSS
-* Axios
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Axios
 
 ## Backend
 
-* FastAPI
-* Python
-* BeautifulSoup
-* OpenAI SDK
-* Jinja2
-* xhtml2pdf
-* Resend API
-* Google Sheets API
+- FastAPI
+- Python
+- OpenAI SDK
+- BeautifulSoup
+- Jinja2
+- xhtml2pdf
+- Resend API
+- Google Sheets API
+- Google Drive API
 
 ---
 
@@ -85,7 +92,7 @@ server/
 
 # Setup Instructions
 
-## 1. Clone Repository
+## Clone Repository
 
 ```bash
 git clone <your_repo_url>
@@ -153,82 +160,68 @@ Create a `.env` file inside `server/`
 OPENAI_API_KEY=
 OPENAI_BASE_URL=
 RESEND_API_KEY=
+GOOGLE_CREDENTIALS=
 ```
 
 ---
 
-# Google Sheets Integration
+# Google Services Setup
 
-## Steps
+## Google Sheets API
 
-1. Create Google Cloud Project
+1. Create a Google Cloud project
 2. Enable Google Sheets API
-3. Create Service Account
-4. Download credentials JSON
-5. Rename to:
-
-```txt
-credentials.json
-```
-
-6. Place inside:
-
-```txt
-server/
-```
-
-7. Share Google Sheet with service account email.
+3. Create a Service Account
+4. Generate credentials
+5. Share the target Google Sheet with the service account email
 
 ---
 
-# Email Delivery
+## Google Drive API
 
-Email delivery is implemented using Resend.
-
-Due to Resend sandbox limitations, emails can currently only be sent to verified recipient addresses unless a custom domain is configured.
-
----
-
-# AI Audit Report
-
-The generated report includes:
-
-* Company Overview
-* Business Observations
-* AI Automation Opportunities
-* Recommended AI Solutions
-* Expected Business Impact
+1. Enable Google Drive API
+2. Create a Drive folder for report storage
+3. Share the folder with the service account email
 
 ---
 
+# AI Audit Report Includes
+
+- Company Overview
+- Business Observations
+- AI Automation Opportunities
+- Recommended AI Solutions
+- Expected Business Impact
+
+---
 
 # Future Improvements
 
-* Advanced web scraping
-* Multi-page PDF reports
-* AI-powered lead scoring
-* Company logo extraction
-* Google Drive PDF archiving
-* Authentication system
-* Admin dashboard
-* Database integration
-* Async background job queue
+- Advanced website scraping
+- Multi-page PDF reports
+- AI-powered lead scoring
+- Company logo extraction
+- Authentication system
+- Admin dashboard
+- Database integration
+- Background task queue
+- Async processing
 
 ---
 
 # Assumptions
 
-* Public company websites are accessible.
-* AI-generated insights are advisory in nature.
-* Users provide valid company website URLs.
+- Public company websites are accessible
+- Users provide valid website URLs
+- AI-generated insights are advisory in nature
 
 ---
 
 # Limitations
 
-* Some websites may block scraping.
-* AI output quality depends on available website content.
-* Email sandbox restrictions apply in testing mode.
+- Some websites may block scraping
+- AI output quality depends on website content availability
+- Resend sandbox restrictions apply in testing mode
 
 ---
 
@@ -236,4 +229,4 @@ The generated report includes:
 
 Akash Kumar
 
-Built as part of the SimplifiIQ AI Software Developer Intern Assessment.
+Built for the SimplifiIQ AI Software Developer Intern Assessment.

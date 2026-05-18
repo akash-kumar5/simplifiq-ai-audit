@@ -11,3 +11,4 @@ gspread
 oauth2client
 markdown
 python-multipart
+google-api-python-client
