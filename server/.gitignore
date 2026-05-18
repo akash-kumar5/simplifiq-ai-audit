@@ -1,0 +1,21 @@
+# Node
+node_modules/
+.next/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Env
+.env
+
+# Credentials
+credentials.json
+
+# Generated Reports
+reports/
+
+# OS
+.DS_Store
+Thumbs.db
